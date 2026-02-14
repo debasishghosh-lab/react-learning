@@ -28,11 +28,22 @@ function App() {
     }
 
     setPassword(generatedPassword)
-  }, [length, numbers, characters])
+  }, [length, numbers, characters,setPassword])
 
   return (
     <>
+      <div className='w-full max-w-md mx-auto  shadow-md rounded-lg px-4 my-8 text-center text-amber-500 bg-gray-700'>
+        <h1 className='text-white text-shadow-2xs text-center'>Password Generator</h1>
+        <div className='flex shadow rounded-lg overflow-hidden mb-4'>
+          <input type="text"
+            value={password}
+            placeholder='password'
+            readOnly
+            className='outline-amber-50 w-full py-1 px-3'
+          />
 
+        </div>
+      </div>
     </>
   )
 }
