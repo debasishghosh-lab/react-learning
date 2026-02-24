@@ -1,0 +1,19 @@
+import React, { useEffect, useState } from 'react'
+
+
+function Github() {
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+        fetch('https://api.github.com/users/debasishghosh-lab')
+        .then(response=>response.json())
+        .then(data=>{
+            console.log(data.followers);
+            
+            setData(data.followers)})
+    },[])
+  return (
+    <div className='text-center p-4 bg-gray-700 text-fuchsia-50'>Github Followers:{data}</div>
+  )
+}
+
+export default Github
