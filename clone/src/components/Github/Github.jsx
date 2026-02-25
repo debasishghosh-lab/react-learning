@@ -7,12 +7,17 @@ function Github() {
         fetch('https://api.github.com/users/debasishghosh-lab')
         .then(response=>response.json())
         .then(data=>{
-            console.log(data.followers);
+            console.log(data);
             
-            setData(data.followers)})
+            setData(data)})
     },[])
   return (
-    <div className='text-center p-4 bg-gray-700 text-fuchsia-50'>Github Followers:{data}</div>
+    <>
+        <div className='text-center p-4 bg-gray-700 text-fuchsia-50'>Github Followers:{data.followers}
+                  <img src={data.avatar_url} alt="git_image" width={200} />
+
+        </div>
+    </>
   )
 }
 
